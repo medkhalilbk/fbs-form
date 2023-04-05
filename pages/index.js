@@ -34,59 +34,59 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>  
-<section class="bg-white  :bg-gray-900">
-    <div class="flex justify-center min-h-screen">
-        <div class="hidden bg-cover lg:block lg:w-2/5" style={{
-  backgroundImage: "url('https://images.unsplash.com/photo-1494621930069-4fd4b2e24a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80')",
+<section className="bg-white  :bg-gray-900">
+    <div className="flex justify-center min-h-screen">
+        <div className="hidden bg-cover lg:block lg:w-2/5" style={{
+  backgroundImage: "url('/background.jpg')",
   // Add any other styles you want to apply to the div here
 }}>
         </div>
 
-        <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
-            <div class="w-full">
-                <h1 class="text-2xl font-semibold tracking-wider text-gray-800   :text-white">
+        <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+            <div className="w-full">
+                <h1 className="text-2xl font-semibold tracking-wider text-gray-800   :text-white">
                     S&apos;incrire à notre formation 
                 </h1>
 
-                <p class="mt-4 text-gray-500  :text-gray-400">
+                <p className="mt-4 text-gray-500  :text-gray-400">
                    Faite votre préinscription en ligne..
                       </p>
 
               
 
-                <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1"  action="/api/form" method="post">
+                <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1"  action="/api/form" method="post">
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
-                        <input name="nom" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
+                        <input name="nom" type="text" placeholder="John" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Prenom</label>
-                        <input type="text" name="prenom" placeholder="Snow" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Prenom</label>
+                        <input type="text" name="prenom" placeholder="Snow" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Phone number</label>
-                        <input type={"number"} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Phone number</label>
+                        <input type={"number"} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Email address</label>
-                        <input type="email" name="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md   :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Email address</label>
+                        <input type="email" name="email" placeholder="johnsnow@example.com" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md   :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
     
-<label for="underline_select" class="sr-only">Choisir formation</label>
+<label for="underline_select" className="sr-only">Choisir formation</label>
  
-<label class="block mb-2 text-sm text-gray-600  :text-gray-200">Type de formation</label>
+<label className="block mb-2 text-sm text-gray-600  :text-gray-200">Type de formation</label>
                        
-<select name="Type"  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" onChange={handleFirstDropdownChange}>
+<select name="Type"  classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" onChange={handleFirstDropdownChange}>
         <option value="" selected disabled >Type de formation</option>
         <option value="Langue">Formation lingustique</option>
         <option value="IT">Formation IT</option> 
       </select>
 
-      <select id="second-dropdown" name="formation" className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
+      <select id="second-dropdown" name="formation" classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -100,30 +100,30 @@ export default function Home() {
     {
         selectedItem && 
         <div>
-            <label class="block text-sm text-gray-600  :text-gray-200">Niveau Langue :</label>
-            <ul class="w-90 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                <div class="flex items-center pl-3">
-                    <input id="list-radio-license" type="radio" value="A1" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A1 </label>
+            <label className="block text-sm text-gray-600  :text-gray-200">Niveau Langue :</label>
+            <ul className="w-90 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="A1" name="niveau" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-license" className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A1 </label>
                 </div>
             </li>
-            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                <div class="flex items-center pl-3">
-                    <input id="list-radio-id" type="radio" value="A2" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A2</label>
+            <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                    <input id="list-radio-id" type="radio" value="A2" name="niveau" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-id" className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A2</label>
                 </div>
             </li>
-            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                <div class="flex items-center pl-3">
-                    <input id="list-radio-millitary" type="radio" value="B1" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label for="list-radio-millitary" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B1</label>
+            <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                    <input id="list-radio-millitary" type="radio" value="B1" name="niveau" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-millitary" className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B1</label>
                 </div>
             </li>
-            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                <div class="flex items-center pl-3">
-                    <input id="list-radio-passport" type="radio" value="B2" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label for="list-radio-passport" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B2</label>
+            <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                    <input id="list-radio-passport" type="radio" value="B2" name="niveau" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-passport" className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B2</label>
                 </div>
             </li>
         </ul>
@@ -137,10 +137,10 @@ export default function Home() {
 
      
                     <button
-                        className="flex items-center justify-content-center justify-between w-80 px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 ">
+                        classNameName="flex items-center justify-content-center justify-between w-80 px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 ">
                         <span>S&apos;incrire </span>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
