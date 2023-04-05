@@ -2,10 +2,30 @@ import Head from "next/head"
 import Image from "next/image"
 import { Inter } from "next/font/google"
 import styles from "@/styles/Home.module.css"
-
+import { useState } from "react"
+import { useEffect } from "react"
 const inter = Inter({ subsets: ["latin"] })
 
+
+
 export default function Home() {
+    const [selectedItem, setSelectedItem] = useState("");
+    const [options, setOptions] = useState([]);
+    const [languageSelected, setlanguageSelected] = useState(false)
+    const handleFirstDropdownChange = (event) => {
+      const selected = event.target.value;
+      setSelectedItem(selected);
+  
+      // Update options for the second dropdown list based on the selected item
+      if (selected === "Langue") {
+        setOptions(["Allemand", "Anglais", "Français"]);
+      } else if (selected === "IT") {
+        setOptions(["Power BI & Preparation à la certification PL-300 ", "E-commerce Tunisie", "Graphic Design Illustrator"]);
+      }  
+      setSelectedItem(selected === "Langue")
+      console.log(selectedItem)
+    };
+ 
   return (
     <>
       <Head>
@@ -14,7 +34,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>  
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white  :bg-gray-900">
     <div class="flex justify-center min-h-screen">
         <div class="hidden bg-cover lg:block lg:w-2/5" style={{
   backgroundImage: "url('https://images.unsplash.com/photo-1494621930069-4fd4b2e24a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80')",
@@ -24,11 +44,11 @@ export default function Home() {
 
         <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
             <div class="w-full">
-                <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
-                    S`&apos;`incrire a notre formation 
+                <h1 class="text-2xl font-semibold tracking-wider text-gray-800   :text-white">
+                    S&apos;incrire à notre formation 
                 </h1>
 
-                <p class="mt-4 text-gray-500 dark:text-gray-400">
+                <p class="mt-4 text-gray-500  :text-gray-400">
                    Faite votre préinscription en ligne..
                       </p>
 
@@ -36,43 +56,89 @@ export default function Home() {
 
                 <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1"  action="/api/form" method="post">
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Nom</label>
-                        <input name="first" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
+                        <input name="nom" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Prenom</label>
-                        <input type="text" name="last" placeholder="Snow" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Prenom</label>
+                        <input type="text" name="prenom" placeholder="Snow" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone number</label>
-                        <input type={"number"} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Phone number</label>
+                        <input type={"number"} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-                        <input type="email" name="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <label class="block mb-2 text-sm text-gray-600  :text-gray-200">Email address</label>
+                        <input type="email" name="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md   :text-gray-300  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
     
 <label for="underline_select" class="sr-only">Choisir formation</label>
-<select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-    <option selected disabled>Choisir formation </option>
-    <option value="US">Power BI & Preparation à la certification PL-300 </option>
-    <option value="CA">Graphic Design 
-Illustrator</option>
-    <option value="FR">E-commerce Tunisie</option>
-    <option value="DE">Français</option>
-    <option value="DE">Anglais</option>
-    <option value="DE">Allemand</option>
+ 
+<label class="block mb-2 text-sm text-gray-600  :text-gray-200">Type de formation</label>
+                       
+<select name="Type"  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" onChange={handleFirstDropdownChange}>
+        <option value="" selected disabled >Type de formation</option>
+        <option value="Langue">Formation lingustique</option>
+        <option value="IT">Formation IT</option> 
+      </select>
 
-</select>
+      <select id="second-dropdown" name="formation" className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    
+      
+                     
+ 
+    {
+        selectedItem && 
+        <div>
+            <label class="block text-sm text-gray-600  :text-gray-200">Niveau Langue :</label>
+            <ul class="w-90 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="A1" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A1 </label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-id" type="radio" value="A2" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau A2</label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-millitary" type="radio" value="B1" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-millitary" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B1</label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-passport" type="radio" value="B2" name="niveau" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="list-radio-passport" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Niveau B2</label>
+                </div>
+            </li>
+        </ul>
+        </div>
+   
+    }
+ 
+ 
 
+     
 
+     
                     <button
-                        class="flex items-center justify-content-center justify-between w-80 px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 ">
-                        <span>S`&apos;`incrire </span>
+                        className="flex items-center justify-content-center justify-between w-80 px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 ">
+                        <span>S&apos;incrire </span>
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"

@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export default function handler(req, res) {
     // Get data submitted in request's body.
     const body = req.body
@@ -8,12 +10,14 @@ export default function handler(req, res) {
   
     // Guard clause checks for first and last name,
     // and returns early if they are not found
-    if (!body.first || !body.last) {
+  
       // Sends a HTTP bad request error code
-      return res.status(400).json({body})
-    }
+      axios.post('https://sheet.best/api/sheets/049e7c3e-18a0-4ff3-b540-494bd3d20598' , body).then((res) => {
+        console.log(res)
+      })
+      return res.redirect('/')
+ 
   
     // Found the name.
-    // Sends a HTTP success code
-    res.status(200).json(body)
+    // Sends a HTTP success code 
   }
