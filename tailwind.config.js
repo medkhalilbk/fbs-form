@@ -6,10 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
  
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}", 
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [],  content: [
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
+  plugins: [require("tw-elements/dist/plugin")]
 }
