@@ -81,7 +81,7 @@ export default function Home() {
            
             <div className="w-full  ">
            
-            <Image loading="lazy" src={'/iconFBS.png'} width={400} height={400} alt="logo"  classNameName="mx-auto fade-in-image"  />
+            <Image loading="lazy" src={'https://i.ibb.co/PxnyGY7/iconFBS.png'} width={400} height={400} alt="logo"  classNameName="mx-auto fade-in-image"  />
                 <h1 className="text-2xl font-semibold tracking-wider text-gray-800   :text-white">
                     Inscrivez vous chez FBS 
                 </h1>
