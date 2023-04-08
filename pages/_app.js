@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
           ReactPixel.pageView()
         })
       })
+      console.log('testing pixel')
   }, [router.events])
   
 
