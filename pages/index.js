@@ -12,11 +12,14 @@ export default function Home() {
     const [selectedItem, setSelectedItem] = useState("");
     const [options, setOptions] = useState([]);
     const [formData, setFormData] = useState({});
+    const [IsSubmited, setIsSubmited] = useState(false)
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
        
       };
       const handleSubmit = (event) => {
+
+        setIsSubmited(true)
         console.log(formData) 
         event.preventDefault();
         axios.post('https://sheet.best/api/sheets/049e7c3e-18a0-4ff3-b540-494bd3d20598' , formData).then((res) => {
@@ -94,7 +97,7 @@ export default function Home() {
               
 
                 <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1" onSubmit={handleSubmit} method="post">
-                    <div>
+                    <div> 
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
                         <input  onChange={handleChange} name="nom" type="text" placeholder="Nom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
@@ -185,7 +188,7 @@ export default function Home() {
 </div>
  
 }
-<button  disabled={isSent} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+<button hidden={IsSubmited}  disabled={isSent} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
   S&#39;inscrire
 </button>
      
