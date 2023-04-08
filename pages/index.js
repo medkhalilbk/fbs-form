@@ -141,12 +141,16 @@ export default function Home() {
         <div>
             <label className="block text-sm text-gray-600  :text-gray-200 mb-4">Niveau Langue :</label>
             <ul className="w-90 text-sm font-medium text-gray-500 bg-white border border-gray-200 rounded-lg dark:bg-white-700 dark:border-gray-600 dark:text-white">
-           
             <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-            <div className="flex items-center pl-3">
+          
+               
+                <div className="flex items-center pl-3">
                     <input id="list-radio-license" checked type="radio" value="Je ne sais pas"  onChange={handleChange} name="niveau" className="" />
                     <label for="list-radio-license" className="w-full py-3 ml-2 text-sm font-medium text-gray-500 dark:text-gray-500">Je ne sais pas </label>
                 </div>
+            </li>
+            <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          
                
                 <div className="flex items-center pl-3">
                     <input id="list-radio-license" type="radio" value="A1"  onChange={handleChange} name="niveau" className="" />
