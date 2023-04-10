@@ -99,35 +99,35 @@ export default function Home() {
                 <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1" onSubmit={handleSubmit} method="post">
                     <div> 
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
-                        <input  onChange={handleChange} name="nom" type="text" placeholder="Nom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input  onChange={handleChange} name="nom" type="text" placeholder="Nom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" required/>
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Prénom</label>
-                        <input type="text"  onChange={handleChange} name="prenom" placeholder="Prénom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input type="text"  onChange={handleChange} name="prenom" placeholder="Prénom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" required/>
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Numéro de téléphone</label>
-                        <input type={"number"}  onChange={handleChange} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input type={"number"}  onChange={handleChange} name="tel" maxLength={8} placeholder="+216 XX XXX XXX " className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"  required/>
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Adresse Email</label>
-                        <input type="email"  onChange={handleChange} name="email" placeholder="nomprenom@example.com" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md   :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input type="email"  onChange={handleChange} name="email" required placeholder="nomprenom@example.com" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md   :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
     
 <label for="underline_select" className="sr-only">Choisir formation</label>
   
                        
-<select  onChange={handleFirstDropdownChange}   name="Type"  classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" >
+<select  onChange={handleFirstDropdownChange} required  name="Type"  classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" >
         <option value="" selected disabled >Type de formation</option>
         <option value="Langue">Formation lingustique</option>
         <option  value="IT">Formation IT</option> 
       </select>
 
-      <select id="second-dropdown" onChange={handleChange} name="formation" classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
+      <select id="second-dropdown" required onChange={handleChange} name="formation" classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
       <option value="" selected disabled >Choisir formation</option>
         {options.map((option) => (
           <option key={option} value={option}>
