@@ -25,6 +25,8 @@ export default function Home() {
         axios.post('https://sheet.best/api/sheets/049e7c3e-18a0-4ff3-b540-494bd3d20598' , formData).then((res) => {
             console.log(res.message)
             setisSent(true)
+        }).catch((err) => {
+            console.log(err)
         })
       };
     const [languageSelected, setlanguageSelected] = useState(false)
@@ -121,13 +123,13 @@ export default function Home() {
 <label for="underline_select" className="sr-only">Choisir formation</label>
   
                        
-<select  onChange={handleFirstDropdownChange} required  name="Type"  classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" >
+<select  onChange={handleFirstDropdownChange}    name="Type"  classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"  id="first-dropdown" >
         <option value="" selected disabled >Type de formation</option>
         <option value="Langue">Formation lingustique</option>
         <option  value="IT">Formation IT</option> 
       </select>
 
-      <select id="second-dropdown" required onChange={handleChange} name="formation" classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
+      <select id="second-dropdown"   onChange={handleChange} name="formation" classNameName="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  :text-gray-400  :border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" >
       <option value="" selected disabled >Choisir formation</option>
         {options.map((option) => (
           <option key={option} value={option}>
