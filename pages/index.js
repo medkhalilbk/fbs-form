@@ -12,6 +12,8 @@ export default function Home() {
     const [selectedItem, setSelectedItem] = useState("");
     const [options, setOptions] = useState([]);
     const [formData, setFormData] = useState({});
+    
+    const [touched, setTouched] = useState(false);
     const [IsSubmited, setIsSubmited] = useState(false)
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -22,8 +24,8 @@ export default function Home() {
         setIsSubmited(true)
         console.log(formData) 
         event.preventDefault();
-        axios.post('https://sheet.best/api/sheets/049e7c3e-18a0-4ff3-b540-494bd3d20598' , formData).then((res) => {
-            console.log(res.message)
+        axios.post('https://sheet.best/api/sheets/180433b4-88a3-4faf-96f4-75f2c03def7e' , formData).then((res) => {
+            console.log(res)
             setisSent(true)
         }).catch((err) => {
             console.log(err)
@@ -98,7 +100,9 @@ export default function Home() {
 
               
 
-                <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1" onSubmit={handleSubmit} method="post">
+                <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-1" onSubmit={handleSubmit} method="post" onChange={() => {
+                    setTouched(true)
+                }}>
                     <div> 
                         <label className="block mb-2 text-sm text-gray-600  :text-gray-200">Nom</label>
                         <input  onChange={handleChange} name="nom" type="text" placeholder="Nom" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  :placeholder-gray-600  :bg-gray-900  :text-gray-500  :border-gray-700 focus:border-blue-400  :focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" required/>
